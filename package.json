@@ -1,13 +1,35 @@
 {
-  "name": "renit",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "renit-monorepo",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodladev/renit.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "change": "pnpx @changesets/cli",
+    "change:publish": "pnpx @changesets/cli publish",
+    "change:version": "pnpx @changesets/cli version",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint .",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.29.8",
+    "@eslint/js": "9.34.0",
+    "eslint": "9.34.0",
+    "eslint-config-prettier": "10.1.8",
+    "globals": "16.3.0",
+    "jsdom": "27.3.0",
+    "prettier": "3.6.2",
+    "prettier-plugin-multiline-arrays": "3.0.6",
+    "prettier-plugin-organize-imports": "4.2.0",
+    "prettier-plugin-packagejson": "2.5.19",
+    "vitest": "4.0.15"
+  },
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "pnpm": ">=9.0.0"
+  }
 }
