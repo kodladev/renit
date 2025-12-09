@@ -1,8 +1,45 @@
 {
   "name": "@renit/parser",
   "version": "0.0.0",
+  "description": "It helps us understand the code structure and allows editing the AST.",
+  "keywords": [
+    "html",
+    "parser"
+  ],
+  "homepage": "https://kodla.net/renit",
+  "bugs": {
+    "url": "https://github.com/kodladev/renit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kodladev/renit.git",
+    "directory": "packages/modules/parser"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Kodla",
+    "email": "dev@kodla.net",
+    "url": "https://kodla.net"
+  },
   "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.js",
+      "types": "./type/index.d.ts"
+    }
+  },
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./type/index.d.ts",
+  "files": [
+    "src",
+    "type",
+    "./*.d.ts"
+  ],
   "dependencies": {
     "uty": "^0.2.1"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
