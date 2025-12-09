@@ -1,18 +1,12 @@
-import { has, includes, push } from 'uty/collect';
+import { includes, push } from 'uty/collect';
 import { RAW_EMPTY, RAW_WHITESPACE } from 'uty/define';
 import { isEmpty, isNull, isUndefined } from 'uty/is';
 import { size } from 'uty/math';
-import { ucfirst } from 'uty/string';
 import { AttributeNode, CommentNode, ElementNode, TextNode } from './ast.js';
 import {
-  HTMLElements,
-  HTML_SCRIPT_TAG,
-  HTML_STYLE_TAG,
-  NITElements,
   RGX_HTML_FIRST_TAG,
   RGX_HTML_TAG_ATTRIBUTES,
   RGX_HTML_TAG_NAME,
-  SVGElements,
   commentEnd,
   textSelector,
 } from './constant.js';
@@ -160,13 +154,6 @@ export function parseHtmlTag(tag, options) {
     }
     push(content, node.children);
   }
-
-  if (has(node.name, HTMLElements) || has(node.name, SVGElements) || has('-', node.name))
-    return node;
-  else if (node.name == HTML_SCRIPT_TAG) node.type = 'Script';
-  else if (node.name == HTML_STYLE_TAG) node.type = 'Style';
-  else if (has(node.name, NITElements)) node.type = ucfirst(name) + 'Block';
-  else node.type = 'Component';
 
   // Return the parsed ElementNode.
   return node;
