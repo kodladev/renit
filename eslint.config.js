@@ -17,6 +17,7 @@ export default [
     ignores: [
       '**/.DS_Store',
       '**/node_modules',
+      '**/test',
     ],
   },
 ];
