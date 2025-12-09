@@ -1,6 +1,9 @@
 packages:
-  - 'packages/core'
-  - 'packages/modules/*'
-  - 'packages/adapters/*'
-  - 'packages/plugins/*'
-  - 'packages/tooling/*'
+  - packages/core
+  - packages/modules/*
+  - packages/adapters/*
+  - packages/plugins/*
+  - packages/tooling/*
+
+onlyBuiltDependencies:
+  - esbuild

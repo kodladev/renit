@@ -42,6 +42,12 @@ importers:
         specifier: 4.0.15
         version: 4.0.15(jsdom@27.3.0(postcss@8.5.6))
 
+  packages/modules/parser:
+    dependencies:
+      uty:
+        specifier: ^0.2.1
+        version: 0.2.1
+
 packages:
 
   '@acemir/cssom@0.9.28':
@@ -1329,6 +1335,10 @@ packages:
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
+
+  uty@0.2.1:
+    resolution: {integrity: sha512-yrmhDIehOMbZAG9Bq52nq8C4QeAaGTUDPc36t3MfstTdJ/wRFO0J4YA4d80jAUcpsxF/ux8HGTGv/S54W4Jk8Q==}
+    engines: {node: '>=18'}
 
   vite@7.2.7:
     resolution: {integrity: sha512-ITcnkFeR3+fI8P1wMgItjGrR10170d8auB4EpMLPqmx6uxElH3a/hHGQabSHKdqd4FXWO1nFIp9rRn7JQ34ACQ==}
@@ -2709,6 +2719,8 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  uty@0.2.1: {}
 
   vite@7.2.7:
     dependencies:
