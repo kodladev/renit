@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+    branches: main
+    paths: 'packages/**'
+  pull_request:
+    branches: main
+    paths: 'packages/**'
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        env:
+          - { node: 24, os: 'ubuntu-22.04' }
+          - { node: 22, os: 'ubuntu-22.04' }
+          - { node: 20, os: 'ubuntu-22.04' }
+          - { node: 20, os: 'windows-latest' }
+          - { node: 20, os: 'macOS-latest' }
+    runs-on: ${{ matrix.env.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.env.node }}
+          cache: pnpm
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test -- run
