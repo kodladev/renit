@@ -1,0 +1,8 @@
+{
+  "name": "@renit/parser",
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "uty": "^0.2.1"
+  }
+}
